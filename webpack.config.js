@@ -4,8 +4,8 @@ module.exports = {
 
   entry: './src/index.js',
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
+    path: path.join(__dirname + '/dist'),
+
     filename: 'bundle.js'
   },
   devServer: {
@@ -19,7 +19,7 @@ module.exports = {
         use: ['babel-loader']
       },
       {
-        test: /\.s?css$/,
+        test: /\.css$/,
         use: ['style-loader', 'css-loader'],
       },
       {
@@ -33,7 +33,7 @@ module.exports = {
   },
   plugins: [
     new HtmlWebPackPlugin({
-      template: path.resolve(__dirname, 'public/index.html'),
+      template: './src/index.html',
       filename: 'index.html'
     })
   ]
