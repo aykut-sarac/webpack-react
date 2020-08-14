@@ -4,12 +4,11 @@ module.exports = {
 
   entry: './src/index.js',
   output: {
-    path: path.join(__dirname + '/dist'),
-
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle-main.js'
   },
   devServer: {
-    contentBase: './dist'
+    historyApiFallback: true,
   },
   module: {
     rules: [
